@@ -26,20 +26,20 @@ public class MainThread {
 		{
 			//boolean in the statement would determine if an updateQuery or ExecuteQuery
 			
-			QueryThread Thread1=new QueryThread(dbname, limit1,queryExecute, false); //for queries
-			QueryThread Thread2=new QueryThread(dbname, limit2,queryUpdate,true); //for Updates
+			SQLThread Thread1=new SQLThread(dbname, limit1,queryExecute, false); //for queries
+			SQLThread Thread2=new SQLThread(dbname, limit2,queryUpdate,true); //for Updates
 			Thread1.start();
 			Thread2.start();
 
 		}
 		else if(option==1)//run just the query
 		{
-			QueryThread Thread1=new QueryThread(dbname, limit1,queryExecute, false); //for queries
+			SQLThread Thread1=new SQLThread(dbname, limit1,queryExecute, false); //for queries
 			Thread1.start();			
 		}
 		else if(option==2)//run just the update
 		{
-			QueryThread Thread2=new QueryThread(dbname, limit2,queryUpdate,true); //for Updates
+			SQLThread Thread2=new SQLThread(dbname, limit2,queryUpdate,true); //for Updates
 			Thread2.start();
 			
 		}
@@ -51,14 +51,14 @@ public class MainThread {
 	
 	
 	//this thread to execute the queries for certain iterations
-	public static class QueryThread extends Thread{
+	public static class SQLThread extends Thread{
 		
 		connector driver; 
 		int limit;
 		String query;
 		boolean isUpdate;
 		
-		QueryThread(String dbname, int counter,String queryUpdate,boolean condition)
+		SQLThread(String dbname, int counter,String queryUpdate,boolean condition)
 		{
 		   limit=counter;	   //number of iterations
 		   query=queryUpdate;  //query to be executed
