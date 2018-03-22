@@ -5,10 +5,10 @@ Introduction:
 
 Structure of the program:
 
-	This program consists of two threads:  MainThread and QueryThread. MainThread inputs the user specified options and starts the QueryThread accordingly.
-	With option 0, MainThread starts two QueryThread, one for executing SQL DML update and the other for executing the query. If one QueryThread completes its iterations, it terminates the other.
-	With option 1, MainThread starts one QueryThread to execute the input query and waits for this thread to perform the specified number of iterations.
-	With option 2, MainThread starts one QueryThread to execute the input update(s) and waits for this thread to perform the specified number of iterations.
+	This program consists of two threads:  MainThread and SQLThread. MainThread inputs the user specified options and starts the SQLThread accordingly.
+	With option 0, MainThread starts two SQLThread, one for executing SQL DML update and the other for executing the query. If one SQLThread completes its iterations, it terminates the other.
+	With option 1, MainThread starts one SQLThread to execute the input query and waits for this thread to perform the specified number of iterations.
+	With option 2, MainThread starts one SQLThread to execute the input update(s) and waits for this thread to perform the specified number of iterations.
 
 Requirements:
 
